@@ -25,7 +25,7 @@ set autoindent
 set tabstop=4
 set shiftwidth=4
 " 颜色主题
-colorscheme sorbet
+colorscheme torte
 
 
 """"""""""""""""""""""""""""""""""""""""" IDE + 原生Vim
@@ -49,9 +49,10 @@ set ignorecase                " Case insensitive search
 """"""""""""""""""""""""""""""""""""""""" 自定义映射
 " 保存文件
 noremap <C-s> :w<CR>    
-
+	
 " 退出vim
 nnoremap <C-w> :q<CR>
+nnoremap <C-q> :q!<CR>
 " 命令模式
 nnoremap <A-j> :
 
@@ -71,6 +72,8 @@ vnoremap <C-c> "+y
 inoremap <C-A> <ESC>ggVG
 " 插入模式下映射 Ctrl-X 剪切当前行
 inoremap <C-X> <ESC>ddi
+" 回到Normal模式
+inoremap <A-k> <ESC>
 
 " Normal 模式下映射 H 和 L 快速跳转行首和行尾
 nmap H ^
