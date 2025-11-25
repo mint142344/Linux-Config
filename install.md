@@ -82,13 +82,21 @@ ssh代理：
 
 ```sh
 # 临时配置
-git -c core.sshCommand="ssh -o ProxyCommand='nc -X 5 -x 127.0.0.1:7890 %h %p'" clone git@github.com:your-username/your-repo.git
+git -c core.sshCommand="ssh -o ProxyCommand='nc -X 5 -x 127.0.0.1:7897 %h %p'" clone git@github.com:your-username/your-repo.git
 # 永久配置 ~/.ssh/config 添加
+# Linux 
     Host github.com
         HostName github.com
         User git
         Port 22
-        ProxyCommand nc -X 5 -x 127.0.0.1:7890 %h %p
+        ProxyCommand nc -X 5 -x 127.0.0.1:7897 %h %p
+
+# Windows (使用"C:\Program Files\Git\mingw64\bin\connect.exe"代替nc)
+Host github.com
+    HostName github.com
+    User git
+    Port 22
+    ProxyCommand connect -S 127.0.0.1:7897 %h %p
 ```
 
 
