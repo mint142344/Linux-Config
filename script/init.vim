@@ -24,8 +24,8 @@ set autoindent
 " 缩进
 set tabstop=4
 set shiftwidth=4
-" 颜色主题
-colorscheme torte
+" 颜色主题亮色zellner
+colorscheme retrobox
 
 
 """"""""""""""""""""""""""""""""""""""""" IDE + 原生Vim

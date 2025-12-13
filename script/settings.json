@@ -1,0 +1,220 @@
+{
+    // 语言
+    "[cpp]": {
+        "editor.semanticHighlighting.enabled": true,
+        "editor.stickyScroll.defaultModel": "foldingProviderModel",
+        "editor.suggest.insertMode": "replace",
+        "editor.wordBasedSuggestions": "off",
+        // "editor.defaultFormatter": "ms-vscode.cpptools"
+        // "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd"
+    },
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    // C_Cpp
+    "C_Cpp.intelliSenseEngine": "disabled",
+    "C_Cpp.doxygen.generatedStyle": "/**",
+    "C_Cpp.inlayHints.autoDeclarationTypes.enabled": true,
+    "C_Cpp.inlayHints.autoDeclarationTypes.showOnLeft": true,
+    "C_Cpp.inlayHints.parameterNames.enabled": true,
+    "C_Cpp.inlayHints.referenceOperator.enabled": true,
+    "C_Cpp.inlayHints.referenceOperator.showSpace": true,
+    // C-matic
+    "C_mantic.contextMenu.switchHeaderSource": false,
+    "C_mantic.cpp.bracedInitialization": true,
+    "C_mantic.headerGuard.style": "Add #pragma once",
+    // clangd (工作区单独从C_Cpp 和 clangd 选)
+    "clangd.enable": false,
+    "clangd.onConfigChanged": "restart",
+    // "clangd.path": "c:\\Users\\hzh\\AppData\\Roaming\\Code\\User\\globalStorage\\llvm-vs-code-extensions.vscode-clangd\\install\\21.1.0\\clangd_21.1.0\\bin\\clangd.exe",
+    "clangd.arguments": [
+        "-background-index",
+        "-j=4",
+        "--header-insertion=never",
+        "--completion-style=detailed", // detailed | bundled
+        "--header-insertion=never", // iwyu | never
+        "--suggest-missing-includes",
+        "--pretty",
+        "--clang-tidy",
+        // "--compile-commands-dir=${workspaceFolder}/build/Debug",
+        // "--compile-commands-dir=${workspaceFolder}/out/build/Linux-Release",
+    ],
+    // cmake 
+    "cmake.configureOnEdit": false,
+    "cmake.configureOnOpen": false,
+    "cmake.generator": "Ninja",
+    "cmake.options.statusBarVisibility": "visible",
+    "cmake.useCMakePresets": "always",
+    "cmake.pinnedCommands": [
+        "cmake.buildTarget",
+        "workbench.action.tasks.configureTaskRunner",
+        "cmake.editCacheUI",
+        "cmake.selectLaunchTarget"
+    ],
+    // editor
+    "diffEditor.hideUnchangedRegions.enabled": true,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "editor.cursorBlinking": "phase",
+    "editor.foldingStrategy": "indentation", // C/C++ 增强预处理法折叠
+    "editor.fontFamily": "'JetBrains Mono', 'Consolas'",
+    "editor.fontSize": 13,
+    // "editor.suggest.preview": true,
+    "editor.inlayHints.enabled": "offUnlessPressed",
+    "editor.lineHeight": 1.5,
+    "editor.lineNumbers": "relative",
+    "editor.stickyScroll.enabled": false,
+    // Cortex-Debug
+    "cortex-debug.armToolchainPath": "/home/hzh/.local/arm-none-eabi/bin",
+    // "cortex-debug.JLinkGDBServerPath": "C:\\Program Files\\SEGGER\\JLink_V880\\JLinkGDBServerCL.exe",
+    // "cortex-debug.liveWatchRefreshRate": 300,
+    // "cortex-debug.openocdPath": "C:/Users/14234/.eide/tools/openocd_7a1adfbec_mingw32/bin",
+    // "cortex-debug.stlinkPath": "C:/Users/14234/.eide/tools/st_cube_programer/bin",
+    // EIDE
+    "EIDE.ARM.ARMCC5.InstallDirectory": "C:\\Keil_v5\\ARM\\ARMCC",
+    "EIDE.ARM.ARMCC6.InstallDirectory": "C:\\Keil_v5\\ARM\\ARMCLANG",
+    "EIDE.ARM.GCC.InstallDirectory": "/home/hzh/.local/arm-none-eabi",
+    "EIDE.Cppcheck.ExecutablePath": "${userRoot}/.eide/tools/cppcheck/cppcheck.exe",
+    "EIDE.JLink.InstallDirectory": "C:\\Program Files\\SEGGER\\JLink_V880",
+    "EIDE.OpenOCD.ExePath": "${userHome}/.eide/tools/openocd_7a1adfbec_mingw32/bin/openocd.exe",
+    "EIDE.Option.EnableTelemetry": false,
+    "EIDE.Option.SilentWhenBuildOrFlash": false,
+    "EIDE.STLink.ExePath": "${userHome}/.eide/tools/st_cube_programer/bin/STM32_Programmer_CLI.exe",
+    // errorLens
+    "errorLens.excludeBySource": [
+        "clang(invalid_declarator_in_function)",
+        "clangd(unused-includes)",
+        "clang(typecheck_indirection_requires_pointer)",
+    ],
+    "errorLens.gutterIconsEnabled": true,
+    "errorLens.enabledDiagnosticLevels": [
+        "error",
+        "warning",
+        "info",
+        "hint"
+    ],
+    // explorer
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "explorer.confirmPasteNative": false,
+    // extensions
+    "extensions.ignoreRecommendations": true,
+    // 文件关联
+    "files.associations": {
+        ".clang-format": "yaml",
+        ".clangd": "yaml",
+        "*.log": "log",
+        "*.ui": "xml",
+        "*vimrc": "Vimscript",
+        // MCU 相关
+        "*.params": "json",
+        "*.qrc": "xml",
+        "*.s": "a51",
+        "*.scvd": "xml",
+        "*.svd": "xml",
+        "*.uvoptx": "xml",
+        "*.uvprojx": "xml"
+    },
+    "files.autoGuessEncoding": true,
+    // git
+    "git.autofetch": true,
+    "git.autorefresh": false,
+    "git.confirmSync": false,
+    // Copilot 
+    "github.copilot.enable": {
+        "*": true,
+        "plaintext": true,
+        "markdown": true,
+        "scminput": false
+    },
+    "github.copilot.nextEditSuggestions.enabled": true,
+    "search.followSymlinks": false,
+    "security.workspace.trust.enabled": false,
+    // Terminal
+    "terminal.integrated.inheritEnv": true,
+    "terminal.integrated.cursorBlinking": true,
+    "terminal.integrated.defaultProfile.linux": "zsh",
+    "terminal.integrated.defaultProfile.windows": "Windows PowerShell",
+    "terminal.integrated.env.linux": {
+        // "LANG": "en_GB.UTF-8"
+        // "LC_ALL": "en_GB.UTF-8",
+    },
+    "terminal.integrated.env.windows": {
+        "HZH": "hzh142344",
+        // "PATH": "${env:PATH};C:\\Qt\\6.8.3\\mingw_64\\bin", // Qt MinGW
+        // "PATH": "${env:PATH};C:/Users/hzh/node/node-18.14.1/"
+    },
+    "terminal.integrated.profiles.windows": {
+        "Git Bash": {
+            "args": [],
+            "color": "terminal.ansiYellow",
+            "icon": "terminal-bash",
+            "source": "Git Bash"
+        },
+        "PowerShell": {
+            "args": [],
+            "color": "terminal.ansiGreen",
+            "icon": "terminal-powershell",
+            "source": "PowerShell"
+        }
+    },
+    // Vim
+    "vim.vimrc.enable": true,
+    "vim.enableNeovim": true,
+    "vim.neovimUseConfigFile": true,
+    "vim.hlsearch": true,
+    "vim.incsearch": true,
+    // "vim.vimrc.path": "使用自动检查目录下的",
+    "vim.showMarksInGutter": true, // 显示书签gutter
+    "vim.foldfix": true, // vim移动跳过折叠
+    "vim.highlightedyank.enable": true, // 高亮复制的部分
+    // 下方 vim 组合键用作 IDE
+    "vim.handleKeys": {
+        "<C-[>": false,
+        "<C-]>": false,
+        "<C-b>": false, // backward page
+        "<C-c>": false,
+        "<C-f>": false, // forward page
+        "<C-g>": false,
+        "<C-h>": false,
+        "<C-i>": false,
+        "<C-j>": false,
+        // 其他
+        "<C-k>": false,
+        "<C-l>": false,
+        "<C-m>": false,
+        "<C-n>": false,
+        "<C-o>": false,
+        "<C-p>": false,
+        "<C-s>": false,
+        "<C-w>": false,
+        "<C-z>": false,
+    },
+    // Workbench
+    "workbench.colorCustomizations": {
+        "editor.lineHighlightBackground": "#49b2b93d", // 高亮当前行
+        "editor.lineHighlightBorder": "#211e1e10",
+    },
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.colorTheme": "Default Light+",
+    "settingsSync.ignoredSettings": [
+        "-clangd.path",
+        "vim.vimrc.path",
+        "-vim.neovimPath",
+        "-EIDE.ARM.INI.Path",
+        "-EIDE.C51.INI.Path",
+        "EIDE.OpenOCD.ExePath",
+        "EIDE.STLink.ExePath",
+        "EIDE.ARM.GCC.InstallDirectory",
+        "cortex-debug.armToolchainPath",
+        "cortex-debug.JLinkGDBServerPath",
+        "cortex-debug.openocdPath",
+        "cortex-debug.stlinkPath",
+        "-vim.neovimConfigPath",
+    ],
+}
