@@ -1,5 +1,10 @@
 {
-    // 语言
+    ///////////////////////////////////////////////////////////////////////////
+    /// General Settings
+    ///////////////////////////////////////////////////////////////////////////
+    // ------------------------------------------
+    // Language
+    // ------------------------------------------
     "[cpp]": {
         "editor.semanticHighlighting.enabled": true,
         "editor.stickyScroll.defaultModel": "foldingProviderModel",
@@ -17,94 +22,41 @@
     "[jsonc]": {
         "editor.defaultFormatter": "vscode.json-language-features"
     },
-    // C_Cpp
-    "C_Cpp.intelliSenseEngine": "disabled",
-    "C_Cpp.doxygen.generatedStyle": "/**",
-    "C_Cpp.inlayHints.autoDeclarationTypes.enabled": true,
-    "C_Cpp.inlayHints.autoDeclarationTypes.showOnLeft": true,
-    "C_Cpp.inlayHints.parameterNames.enabled": true,
-    "C_Cpp.inlayHints.referenceOperator.enabled": true,
-    "C_Cpp.inlayHints.referenceOperator.showSpace": true,
-    // C-matic
-    "C_mantic.contextMenu.switchHeaderSource": false,
-    "C_mantic.cpp.bracedInitialization": true,
-    "C_mantic.headerGuard.style": "Add #pragma once",
-    // clangd (工作区单独从C_Cpp 和 clangd 选)
-    "clangd.enable": false,
-    "clangd.onConfigChanged": "restart",
-    // "clangd.path": "c:\\Users\\hzh\\AppData\\Roaming\\Code\\User\\globalStorage\\llvm-vs-code-extensions.vscode-clangd\\install\\21.1.0\\clangd_21.1.0\\bin\\clangd.exe",
-    "clangd.arguments": [
-        "-background-index",
-        "-j=4",
-        "--header-insertion=never",
-        "--completion-style=detailed", // detailed | bundled
-        "--header-insertion=never", // iwyu | never
-        "--suggest-missing-includes",
-        "--pretty",
-        "--clang-tidy",
-        // "--compile-commands-dir=${workspaceFolder}/build/Debug",
-        // "--compile-commands-dir=${workspaceFolder}/out/build/Linux-Release",
-    ],
-    // cmake 
-    "cmake.configureOnEdit": false,
-    "cmake.configureOnOpen": false,
-    "cmake.generator": "Ninja",
-    "cmake.options.statusBarVisibility": "visible",
-    "cmake.useCMakePresets": "always",
-    "cmake.pinnedCommands": [
-        "cmake.buildTarget",
-        "workbench.action.tasks.configureTaskRunner",
-        "cmake.editCacheUI",
-        "cmake.selectLaunchTarget"
-    ],
-    // editor
+    // ------------------------------------------
+    // Editor
+    // ------------------------------------------
     "diffEditor.hideUnchangedRegions.enabled": true,
     "diffEditor.ignoreTrimWhitespace": false,
     "editor.cursorBlinking": "phase",
+    "editor.minimap.showSlider": "always",
+    "editor.minimap.size": "fill",
     "editor.foldingStrategy": "indentation", // C/C++ 增强预处理法折叠
     "editor.fontFamily": "'JetBrains Mono', 'Consolas'",
     "editor.fontSize": 13,
-    // "editor.suggest.preview": true,
     "editor.inlayHints.enabled": "offUnlessPressed",
     "editor.lineHeight": 1.5,
     "editor.lineNumbers": "relative",
     "editor.stickyScroll.enabled": false,
-    // Cortex-Debug
-    "cortex-debug.armToolchainPath": "/home/hzh/.local/arm-none-eabi/bin",
-    // "cortex-debug.JLinkGDBServerPath": "C:\\Program Files\\SEGGER\\JLink_V880\\JLinkGDBServerCL.exe",
-    // "cortex-debug.liveWatchRefreshRate": 300,
-    // "cortex-debug.openocdPath": "C:/Users/14234/.eide/tools/openocd_7a1adfbec_mingw32/bin",
-    // "cortex-debug.stlinkPath": "C:/Users/14234/.eide/tools/st_cube_programer/bin",
-    // EIDE
-    "EIDE.ARM.ARMCC5.InstallDirectory": "C:\\Keil_v5\\ARM\\ARMCC",
-    "EIDE.ARM.ARMCC6.InstallDirectory": "C:\\Keil_v5\\ARM\\ARMCLANG",
-    "EIDE.ARM.GCC.InstallDirectory": "/home/hzh/.local/arm-none-eabi",
-    "EIDE.Cppcheck.ExecutablePath": "${userRoot}/.eide/tools/cppcheck/cppcheck.exe",
-    "EIDE.JLink.InstallDirectory": "C:\\Program Files\\SEGGER\\JLink_V880",
-    "EIDE.OpenOCD.ExePath": "${userHome}/.eide/tools/openocd_7a1adfbec_mingw32/bin/openocd.exe",
-    "EIDE.Option.EnableTelemetry": false,
-    "EIDE.Option.SilentWhenBuildOrFlash": false,
-    "EIDE.STLink.ExePath": "${userHome}/.eide/tools/st_cube_programer/bin/STM32_Programmer_CLI.exe",
-    // errorLens
-    "errorLens.excludeBySource": [
-        "clang(invalid_declarator_in_function)",
-        "clangd(unused-includes)",
-        "clang(typecheck_indirection_requires_pointer)",
-    ],
-    "errorLens.gutterIconsEnabled": true,
-    "errorLens.enabledDiagnosticLevels": [
-        "error",
-        "warning",
-        "info",
-        "hint"
-    ],
-    // explorer
+    "editor.semanticTokenColorCustomizations": {},
+    // ------------------------------------------
+    // Workbench
+    // ------------------------------------------
+    "workbench.colorCustomizations": {
+        // 高亮当前行
+        "editor.lineHighlightBackground": "#49b2b93d",
+        "editor.lineHighlightBorder": "#211e1e10",
+    },
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.colorTheme": "Default Light+",
+    // ------------------------------------------
+    // Explorer
+    // ------------------------------------------
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
     "explorer.confirmPasteNative": false,
-    // extensions
-    "extensions.ignoreRecommendations": true,
-    // 文件关联
+    // ------------------------------------------
+    // File
+    // ------------------------------------------
     "files.associations": {
         ".clang-format": "yaml",
         ".clangd": "yaml",
@@ -121,11 +73,15 @@
         "*.uvprojx": "xml"
     },
     "files.autoGuessEncoding": true,
-    // git
+    // ------------------------------------------
+    // Git
+    // ------------------------------------------
     "git.autofetch": true,
     "git.autorefresh": false,
     "git.confirmSync": false,
+    // ------------------------------------------
     // Copilot 
+    // ------------------------------------------
     "github.copilot.enable": {
         "*": true,
         "plaintext": true,
@@ -133,22 +89,16 @@
         "scminput": false
     },
     "github.copilot.nextEditSuggestions.enabled": true,
-    "search.followSymlinks": false,
-    "security.workspace.trust.enabled": false,
+    // ------------------------------------------
     // Terminal
-    "terminal.integrated.inheritEnv": true,
+    // ------------------------------------------
     "terminal.integrated.cursorBlinking": true,
     "terminal.integrated.defaultProfile.linux": "zsh",
     "terminal.integrated.defaultProfile.windows": "Windows PowerShell",
-    "terminal.integrated.env.linux": {
-        // "LANG": "en_GB.UTF-8"
-        // "LC_ALL": "en_GB.UTF-8",
-    },
-    "terminal.integrated.env.windows": {
-        "HZH": "hzh142344",
-        // "PATH": "${env:PATH};C:\\Qt\\6.8.3\\mingw_64\\bin", // Qt MinGW
-        // "PATH": "${env:PATH};C:/Users/hzh/node/node-18.14.1/"
-    },
+    "terminal.integrated.shellIntegration.enabled": true,
+    "terminal.integrated.env.linux": {},
+    "terminal.integrated.env.windows": {},
+    "terminal.integrated.inheritEnv": false,
     "terminal.integrated.profiles.windows": {
         "Git Bash": {
             "args": [],
@@ -157,13 +107,54 @@
             "source": "Git Bash"
         },
         "PowerShell": {
-            "args": [],
+            "args": [
+                "-NoExit",
+                "-Command",
+                "& { [Console]::OutputEncoding = [System.Text.Encoding]::UTF8 }"
+            ],
             "color": "terminal.ansiGreen",
             "icon": "terminal-powershell",
             "source": "PowerShell"
         }
     },
+    // ------------------------------------------
+    // Other Settings
+    // ------------------------------------------
+    "extensions.ignoreRecommendations": true,
+    "search.followSymlinks": false,
+    "security.workspace.trust.enabled": false,
+    "settingsSync.ignoredSettings": [
+        "-clangd.path",
+        "cortex-debug.armToolchainPath",
+        "cortex-debug.JLinkGDBServerPath",
+        "cortex-debug.openocdPath",
+        "cortex-debug.stlinkPath",
+        "-EIDE.ARM.INI.Path",
+    ],
+    "settingsSync.ignoredExtensions": [
+        "cl.eide",
+    ],
+    ///////////////////////////////////////////////////////////////////////////
+    /// Base Extensions Settings
+    ///////////////////////////////////////////////////////////////////////////
+    // ------------------------------------------
+    // errorLens
+    // ------------------------------------------
+    "errorLens.excludeBySource": [
+        "clang(invalid_declarator_in_function)",
+        "clangd(unused-includes)",
+        "clang(typecheck_indirection_requires_pointer)",
+    ],
+    "errorLens.gutterIconsEnabled": true,
+    "errorLens.enabledDiagnosticLevels": [
+        "error",
+        "warning",
+        "info",
+        "hint"
+    ],
+    // ------------------------------------------
     // Vim
+    // ------------------------------------------
     "vim.vimrc.enable": true,
     "vim.enableNeovim": true,
     "vim.neovimUseConfigFile": true,
@@ -194,27 +185,82 @@
         "<C-s>": false,
         "<C-w>": false,
         "<C-z>": false,
+        "<C-t>": false,
     },
-    // Workbench
-    "workbench.colorCustomizations": {
-        "editor.lineHighlightBackground": "#49b2b93d", // 高亮当前行
-        "editor.lineHighlightBorder": "#211e1e10",
-    },
-    "workbench.iconTheme": "material-icon-theme",
-    "workbench.colorTheme": "Default Light+",
-    "settingsSync.ignoredSettings": [
-        "-clangd.path",
-        "vim.vimrc.path",
-        "-vim.neovimPath",
-        "-EIDE.ARM.INI.Path",
-        "-EIDE.C51.INI.Path",
-        "EIDE.OpenOCD.ExePath",
-        "EIDE.STLink.ExePath",
-        "EIDE.ARM.GCC.InstallDirectory",
-        "cortex-debug.armToolchainPath",
-        "cortex-debug.JLinkGDBServerPath",
-        "cortex-debug.openocdPath",
-        "cortex-debug.stlinkPath",
-        "-vim.neovimConfigPath",
+    ///////////////////////////////////////////////////////////////////////////
+    ///  Extension Settings
+    ///////////////////////////////////////////////////////////////////////////
+    // ------------------------------------------
+    // C_Cpp
+    // ------------------------------------------
+    "C_Cpp.intelliSenseEngine": "disabled",
+    "C_Cpp.doxygen.generatedStyle": "/**",
+    "C_Cpp.inlayHints.autoDeclarationTypes.enabled": true,
+    "C_Cpp.inlayHints.autoDeclarationTypes.showOnLeft": true,
+    "C_Cpp.inlayHints.parameterNames.enabled": true,
+    "C_Cpp.inlayHints.referenceOperator.enabled": true,
+    "C_Cpp.inlayHints.referenceOperator.showSpace": true,
+    // ------------------------------------------
+    // C-matic
+    // ------------------------------------------
+    "C_mantic.contextMenu.switchHeaderSource": false,
+    "C_mantic.cpp.bracedInitialization": true,
+    "C_mantic.headerGuard.style": "Add #pragma once",
+    // ------------------------------------------
+    // clangd
+    // ------------------------------------------
+    "clangd.enable": false,
+    "clangd.onConfigChanged": "restart",
+    "clangd.arguments": [
+        "-background-index",
+        "-j=10",
+        "--completion-style=detailed", // detailed | bundled
+        "--header-insertion=never", // iwyu | never
+        "--suggest-missing-includes",
+        "--pretty",
+        "--clang-tidy",
+        "--all-scopes-completion", // default on
+        "--function-arg-placeholders=1", // default 1
+        // "--query-driver=<glob>",
+        // "--compile-commands-dir=${workspaceFolder}/build/Debug",
+        // "--compile-commands-dir=${workspaceFolder}/out/build/Linux-Release",
     ],
+    // ------------------------------------------
+    // CMake 
+    // ------------------------------------------
+    "cmake.configureOnEdit": false,
+    "cmake.configureOnOpen": false,
+    "cmake.showNotAllDocumentsSavedQuestion": false,
+    "cmake.generator": "Ninja",
+    "cmake.useCMakePresets": "always",
+    "cmake.options.statusBarVisibility": "visible",
+    "cmake.pinnedCommands": [
+        "cmake.buildTarget",
+        "workbench.action.tasks.configureTaskRunner",
+        "cmake.editCacheUI",
+        "cmake.selectLaunchTarget",
+        "cmake.install",
+        "cmake.cleanRebuild",
+    ],
+    // ------------------------------------------
+    // Cortex-Debug
+    // ------------------------------------------
+    "cortex-debug.liveWatchRefreshRate": 300,
+    "cortex-debug.armToolchainPath.windows": "C:/Users/14234/.eide/tools/gcc_arm/bin",
+    "cortex-debug.JLinkGDBServerPath.windows": "C:/Users/14234/.eide/tools/jlink/JLinkGDBServerCL.exe",
+    "cortex-debug.openocdPath.windows": "C:/Users/14234/.eide/tools/openocd_7a1adfbec_mingw32/bin",
+    "cortex-debug.stlinkPath.windows": "C:/Users/14234/.eide/tools/st_cube_programer/bin",
+    // ------------------------------------------
+    // EIDE
+    // ------------------------------------------
+    "EIDE.ARM.ARMCC5.InstallDirectory": "C:/Keil_v5/ARM/ARMCC",
+    "EIDE.ARM.ARMCC6.InstallDirectory": "C:/Keil_v5/ARM/ARMCLANG",
+    "EIDE.ARM.GCC.InstallDirectory": "${userHome}/.eide/tools/gcc_arm",
+    "EIDE.ARM.INI.Path": "c:/Keil_v5/TOOLS.INI",
+    "EIDE.Cppcheck.ExecutablePath": "${userRoot}/.eide/tools/cppcheck/cppcheck.exe",
+    "EIDE.JLink.InstallDirectory": "${userHome}/.eide/tools/jlink",
+    "EIDE.OpenOCD.ExePath": "${userHome}/.eide/tools/openocd_7a1adfbec_mingw32/bin/openocd.exe",
+    "EIDE.Option.EnableTelemetry": false,
+    "EIDE.Option.SilentWhenBuildOrFlash": false,
+    "EIDE.STLink.ExePath": "${userHome}/.eide/tools/st_cube_programer/bin/STM32_Programmer_CLI.exe",
 }

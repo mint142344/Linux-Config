@@ -1,5 +1,8 @@
 // 将键绑定放在此文件中以覆盖默认值auto[]
 [
+    ///////////////////////////////////////////////////////////////////////////
+    /// 新增
+    ///////////////////////////////////////////////////////////////////////////
     {
         "command": "editor.action.quickFix",
         "key": "alt+enter",
@@ -63,6 +66,38 @@
         "key": "ctrl+w"
     },
     {
+        "key": "shift+space",
+        "command": "editor.action.triggerSuggest",
+        "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly && !suggestWidgetVisible"
+    },
+    {
+        "key": "ctrl+f12",
+        "command": "editor.action.revealDeclaration"
+    },
+    {
+        "key": "shift+alt+f",
+        "command": "editor.action.formatDocument",
+        "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor"
+    },
+    {
+        "key": "shift+alt+f",
+        "command": "editor.action.formatDocument.none",
+        "when": "editorTextFocus && !editorHasDocumentFormattingProvider && !editorReadonly"
+    },
+    {
+        "key": "alt+left",
+        "command": "workbench.action.navigateBack",
+        "when": "canNavigateBack"
+    },
+    {
+        "key": "alt+right",
+        "command": "workbench.action.navigateForward",
+        "when": "canNavigateForward"
+    },
+    ///////////////////////////////////////////////////////////////////////////
+    /// 禁用/取消
+    ///////////////////////////////////////////////////////////////////////////
+    {
         "command": "-toggleSearchEditorRegex", // 取消默认的 Alt+R 正则表达式切换
         "key": "alt+r",
         "when": "inSearchEditor && searchInputBoxFocus"
@@ -83,23 +118,9 @@
         "when": "searchViewletFocus"
     },
     {
-        "key": "ctrl+f12",
-        "command": "editor.action.revealDeclaration"
-    },
-    {
-        "key": "shift+alt+f",
-        "command": "editor.action.formatDocument",
-        "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor"
-    },
-    {
         "key": "ctrl+shift+i",
         "command": "-editor.action.formatDocument",
         "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor"
-    },
-    {
-        "key": "shift+alt+f",
-        "command": "editor.action.formatDocument.none",
-        "when": "editorTextFocus && !editorHasDocumentFormattingProvider && !editorReadonly"
     },
     {
         "key": "ctrl+shift+i",
@@ -117,11 +138,6 @@
         "when": "terminalFocus && terminalHasBeenCreated && terminalSplitPaneActive || terminalFocus && terminalProcessSupported && terminalSplitPaneActive"
     },
     {
-        "key": "alt+left",
-        "command": "workbench.action.navigateBack",
-        "when": "canNavigateBack"
-    },
-    {
         "key": "ctrl+alt+-",
         "command": "-workbench.action.navigateBack",
         "when": "canNavigateBack"
@@ -137,19 +153,9 @@
         "when": "terminalFocus"
     },
     {
-        "key": "alt+right",
-        "command": "workbench.action.navigateForward",
-        "when": "canNavigateForward"
-    },
-    {
         "key": "ctrl+shift+-",
         "command": "-workbench.action.navigateForward",
         "when": "canNavigateForward"
-    },
-    {
-        "key": "shift+space",
-        "command": "editor.action.triggerSuggest",
-        "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly && !suggestWidgetVisible"
     },
     {
         "key": "ctrl+space",
@@ -190,5 +196,9 @@
         "key": "ctrl+space",
         "command": "-workbench.action.terminal.triggerSuggest",
         "when": "config.terminal.integrated.suggest.enabled && terminalFocus && terminalProcessSupported && !terminalSuggestWidgetVisible"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "-workbench.action.togglePanel"
     }
 ]
