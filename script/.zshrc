@@ -122,10 +122,6 @@ unset key
 # }}} End configuration added by Zim Framework install
 
 
-# export
-export VCPKG_ROOT=~/.local/vcpkg
-export PATH=$VCPKG_ROOT:$PATH
-
 # sdcv
 insert-sdcv() {
 	# 光标移动到行首

@@ -17,8 +17,9 @@ $ mv clash-linux-amd64 /usr/local/bin/clash
 ## 订阅配置
 
 ```bash
-# 2.手动导入 将Windows版的yaml配置文件复制 到Linux下$HOME/.config/clash/config.yaml
+# 2.手动导入 将Windows/安卓下的的yaml配置文件复制 到Linux下$HOME/.config/clash/config.yaml
 $ scp .\clash-verge.yaml hzh@Arch:/home/hzh/.config/clash
+# 网上下载Country.mmdb 到$HOME/.config/clash/
 $ scp .\Country.mmdb hzh@Arch:/home/hzh/.config/clash
 # 或自动导入订阅(如果支持)
 $ wget -O config.yaml 订阅地址
