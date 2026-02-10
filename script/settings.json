@@ -3,15 +3,29 @@
     /// General Settings
     ///////////////////////////////////////////////////////////////////////////
     // ------------------------------------------
-    // Language
+    // Editor
+    // ------------------------------------------
+    "diffEditor.hideUnchangedRegions.enabled": true,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "editor.cursorBlinking": "phase",
+    "editor.minimap.showSlider": "always",
+    "editor.foldingStrategy": "indentation",
+    "editor.fontFamily": "'JetBrains Mono', 'Consolas'",
+    "editor.fontSize": 13,
+    "editor.inlayHints.enabled": "offUnlessPressed",
+    "editor.lineHeight": 1.5,
+    "editor.lineNumbers": "relative",
+    "editor.stickyScroll.enabled": false,
+    "editor.semanticTokenColorCustomizations": {},
+    "editor.wordBasedSuggestions": "allDocuments",
+    "editor.minimap.size": "fill",
+    // ------------------------------------------
+    // Language Editor Settings
     // ------------------------------------------
     "[cpp]": {
-        "editor.semanticHighlighting.enabled": true,
         "editor.stickyScroll.defaultModel": "foldingProviderModel",
         "editor.suggest.insertMode": "replace",
-        "editor.wordBasedSuggestions": "off",
-        // "editor.defaultFormatter": "ms-vscode.cpptools"
-        // "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd"
+        "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd"
     },
     "[html]": {
         "editor.defaultFormatter": "vscode.html-language-features"
@@ -22,38 +36,6 @@
     "[jsonc]": {
         "editor.defaultFormatter": "vscode.json-language-features"
     },
-    // ------------------------------------------
-    // Editor
-    // ------------------------------------------
-    "diffEditor.hideUnchangedRegions.enabled": true,
-    "diffEditor.ignoreTrimWhitespace": false,
-    "editor.cursorBlinking": "phase",
-    "editor.minimap.showSlider": "always",
-    "editor.minimap.size": "fill",
-    "editor.foldingStrategy": "indentation", // C/C++ 增强预处理法折叠
-    "editor.fontFamily": "'JetBrains Mono', 'Consolas'",
-    "editor.fontSize": 13,
-    "editor.inlayHints.enabled": "offUnlessPressed",
-    "editor.lineHeight": 1.5,
-    "editor.lineNumbers": "relative",
-    "editor.stickyScroll.enabled": false,
-    "editor.semanticTokenColorCustomizations": {},
-    // ------------------------------------------
-    // Workbench
-    // ------------------------------------------
-    "workbench.colorCustomizations": {
-        // 高亮当前行
-        "editor.lineHighlightBackground": "#49b2b93d",
-        "editor.lineHighlightBorder": "#211e1e10",
-    },
-    "workbench.iconTheme": "material-icon-theme",
-    "workbench.colorTheme": "Default Light+",
-    // ------------------------------------------
-    // Explorer
-    // ------------------------------------------
-    "explorer.confirmDelete": false,
-    "explorer.confirmDragAndDrop": false,
-    "explorer.confirmPasteNative": false,
     // ------------------------------------------
     // File
     // ------------------------------------------
@@ -73,6 +55,24 @@
         "*.uvprojx": "xml"
     },
     "files.autoGuessEncoding": true,
+    "files.trimFinalNewlines": true,
+    "files.trimTrailingWhitespace": true,
+    // ------------------------------------------
+    // Workbench
+    // ------------------------------------------
+    "workbench.colorCustomizations": {
+        // 高亮当前行
+        "editor.lineHighlightBackground": "#49b2b93d",
+        "editor.lineHighlightBorder": "#211e1e10",
+    },
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.colorTheme": "Default Light+",
+    // ------------------------------------------
+    // Explorer
+    // ------------------------------------------
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "explorer.confirmPasteNative": false,
     // ------------------------------------------
     // Git
     // ------------------------------------------
@@ -80,7 +80,7 @@
     "git.autorefresh": false,
     "git.confirmSync": false,
     // ------------------------------------------
-    // Copilot 
+    // Copilot
     // ------------------------------------------
     "github.copilot.enable": {
         "*": true,
@@ -94,32 +94,14 @@
     // ------------------------------------------
     "terminal.integrated.cursorBlinking": true,
     "terminal.integrated.defaultProfile.linux": "zsh",
-    "terminal.integrated.defaultProfile.windows": "Windows PowerShell",
+    "terminal.integrated.defaultProfile.windows": "PowerShell",
     "terminal.integrated.shellIntegration.enabled": true,
     "terminal.integrated.env.linux": {},
     "terminal.integrated.env.windows": {},
-    "terminal.integrated.inheritEnv": false,
-    "terminal.integrated.profiles.windows": {
-        "Git Bash": {
-            "args": [],
-            "color": "terminal.ansiYellow",
-            "icon": "terminal-bash",
-            "source": "Git Bash"
-        },
-        "PowerShell": {
-            "args": [
-                "-NoExit",
-                "-Command",
-                "& { [Console]::OutputEncoding = [System.Text.Encoding]::UTF8 }"
-            ],
-            "color": "terminal.ansiGreen",
-            "icon": "terminal-powershell",
-            "source": "PowerShell"
-        }
-    },
     // ------------------------------------------
     // Other Settings
     // ------------------------------------------
+    "chat.mcp.gallery.enabled": true,
     "extensions.ignoreRecommendations": true,
     "search.followSymlinks": false,
     "security.workspace.trust.enabled": false,
@@ -130,6 +112,7 @@
         "cortex-debug.openocdPath",
         "cortex-debug.stlinkPath",
         "-EIDE.ARM.INI.Path",
+        "vim.vimrc.path",
     ],
     "settingsSync.ignoredExtensions": [
         "cl.eide",
@@ -160,10 +143,13 @@
     "vim.neovimUseConfigFile": true,
     "vim.hlsearch": true,
     "vim.incsearch": true,
-    // "vim.vimrc.path": "使用自动检查目录下的",
+    "vim.vimrc.path": "$HOME/AppData/Local/nvim/init.vim",
     "vim.showMarksInGutter": true, // 显示书签gutter
     "vim.foldfix": true, // vim移动跳过折叠
     "vim.highlightedyank.enable": true, // 高亮复制的部分
+    "vim.easymotion": true,
+    "vim.leader": "<space>",
+    "vim.timeout": 100,
     // 下方 vim 组合键用作 IDE
     "vim.handleKeys": {
         "<C-[>": false,
@@ -226,7 +212,7 @@
         // "--compile-commands-dir=${workspaceFolder}/out/build/Linux-Release",
     ],
     // ------------------------------------------
-    // CMake 
+    // CMake
     // ------------------------------------------
     "cmake.configureOnEdit": false,
     "cmake.configureOnOpen": false,
@@ -263,4 +249,7 @@
     "EIDE.Option.EnableTelemetry": false,
     "EIDE.Option.SilentWhenBuildOrFlash": false,
     "EIDE.STLink.ExePath": "${userHome}/.eide/tools/st_cube_programer/bin/STM32_Programmer_CLI.exe",
+    // ------------------------------------------
+    // Python
+    // ------------------------------------------
 }

@@ -94,3 +94,8 @@ nmap L $
 vmap L $
 " Visual 模式 跳转行首/尾
 vmap H ^
+
+" leader key 设置为空格
+let mapleader = " "
+nnoremap <leader>ev :vsp $MYVIMRC<CR>
+nnoremap <leader>sv :source $MYVIMRC<CR>
